@@ -1,12 +1,6 @@
 """
 This script will enumerate a vulnerable target to identify database, table, column names, and passwords.
 
-The "charset" value can be modified to any string you choose and the script will enumerate through it.
-
-Contains some hardcoded logic, like expecting a 4 values for select. Need to adjust this. 
-The reason is that this was made for a CTF where the database had this logic.
-Could just add a function which determines the amount of columns for select.
-
 Could be improved for handling network errors or unexpected results.
 """
 import requests
@@ -164,7 +158,7 @@ def print_ascii():
 |____/ \__\_\_____|_| |_____|_| |_|\__,_|_| |_| |_|
             Blind SQLi Enumerator
           
-          
+
 """)
 
 def main():
