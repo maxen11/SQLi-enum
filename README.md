@@ -43,23 +43,23 @@ python3 SQLi_enum.py --success "Welcome" --columns 4 http://target.url
 
 ## 📖 Arguments
 Argument	Description
-url	The target URL (must be POST-based login page)
---success	Success string that appears in a successful login response
---columns	Number of columns required for UNION SELECT
+- url	The target URL (must be POST-based login page)
+- --success	Success string that appears in a successful login response
+- --columns	Number of columns required for UNION SELECT
 
 ---
 
 ## 🔧 Requirements
-Python 3.x
-requests library
+- Python 3.x
+- requests library
 
 Install via:
-pip install requests
+- pip install requests
 
 ---
 
 ## 💡 Tips
-Use Burp Suite or browser dev tools to inspect how the login form submits data.
-Adjust the success string if the target app uses different responses.
-Ensure the column count (--columns) matches what the database expects.
+- Use Burp Suite or browser dev tools to inspect how the login form submits data.
+- Adjust the success string if the target app uses different responses.
+- Ensure the column count (--columns) matches what the database expects.
 
