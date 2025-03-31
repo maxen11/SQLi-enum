@@ -156,6 +156,17 @@ def prompt_and_enumerate_password(url, db_name, table_name, column_list, success
         union_columns=union_columns
     )
 
+def print_ascii():
+    print(""" ____   ___  _     _   _____
+/ ___| / _ \| |   (_) | ____|_ __  _   _ _ __ ___
+\___ \| | | | |   | | |  _| | '_ \| | | | '_ ` _ \\
+ ___) | |_| | |___| | | |___| | | | |_| | | | | | |
+|____/ \__\_\_____|_| |_____|_| |_|\__,_|_| |_| |_|
+            Blind SQLi Enumerator
+          
+          
+""")
+
 def main():
     parser = argparse.ArgumentParser(description="Blind SQLi enumerator for CTFs")
     parser.add_argument("url", help="Target URL")
@@ -167,6 +178,8 @@ def main():
     success_str = args.success
     union_columns = args.columns
 
+    print_ascii()
+
     db_name = get_database_name(url, success_str, union_columns)
     if db_name:
         table_name = get_table_name(url, db_name, success_str, union_columns)
@@ -175,6 +188,8 @@ def main():
             if column_name:
                 columns = enumerate_additional_columns(url, db_name, table_name, column_name, success_str, union_columns)
                 prompt_and_enumerate_password(url, db_name, table_name, columns, success_str, union_columns)
+
+
 
 if __name__ == "__main__":
     try:
