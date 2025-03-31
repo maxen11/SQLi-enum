@@ -54,7 +54,7 @@ Argument	Description
 - requests library
 
 Install via:
-- pip install requests
+- pip3 install requests
 
 ---
 
