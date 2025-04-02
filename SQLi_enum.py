@@ -1,7 +1,5 @@
 """
 This script will enumerate a vulnerable target to identify database, table, column names, and passwords.
-
-Could be improved for handling network errors or unexpected results.
 """
 import requests
 import sys
