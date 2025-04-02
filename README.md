@@ -1,6 +1,6 @@
-# SQLi_enum – Blind SQL Injection Enumerator for CTFs
+# SQLi_enum – Blind SQL Injection Enumerator
 
-`SQLi_enum.py` is a command-line tool for blind SQL injection exploitation in CTFs or lab environments.  
+`SQLi_enum.py` is a command-line tool for blind SQL injection exploitation.
 It automates the process of extracting:
 
 - Database names  
